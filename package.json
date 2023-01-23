@@ -1,6 +1,6 @@
 {
     "name": "react-context-registry",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A small library designed to register and return singletonized React contexts",
     "license": "MIT",
     "repository": {
