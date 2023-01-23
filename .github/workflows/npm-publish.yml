@@ -22,8 +22,8 @@ jobs:
         run: npm run quality
       - name: Build project
         run: npm run build
-      - name: Prevent husky from interfering with standard-version commit
-        run: rm ./.git/hooks/prepare-commit-msg
+      # - name: Prevent husky from interfering with standard-version commit
+      #   run: rm ./.git/hooks/prepare-commit-msg
       - name: Run standard-version to bump version
         run: npm run release
       - name: Push version bump to main
