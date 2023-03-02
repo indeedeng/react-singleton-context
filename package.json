@@ -1,11 +1,11 @@
 {
-    "name": "react-context-registry",
+    "name": "react-singleton-context",
     "version": "1.0.1",
     "description": "A small library designed to register and return singletonized React contexts",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/indeedeng/react-context-registry"
+        "url": "https://github.com/indeedeng/react-singleton-context"
     },
     "files": [
         "dist",

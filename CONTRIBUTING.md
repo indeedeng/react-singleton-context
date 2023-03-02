@@ -2,7 +2,7 @@
 
 ## Getting started
 
-To begin working on `react-context-registry`,
+To begin working on `react-singleton-context`,
 
 1. clone the repo and `cd` into the project directory
 
