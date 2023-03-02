@@ -1,6 +1,6 @@
 # react-singleton-context
 
-## About
+## About this project
 
 React Singleton Context is a small library to alleviate the pain points that come with using React Context in micro-frontend architectures.
 
