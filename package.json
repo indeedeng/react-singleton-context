@@ -31,7 +31,8 @@
         "test:watch": "jest --watch",
         "quality": "npm run lint && npm run test",
         "commit": "git-cz",
-        "commitlint": "commitlint --color --verbose"
+        "commitlint": "commitlint --color --verbose",
+        "prepare": "husky install"
     },
     "devDependencies": {
         "@babel/core": "^7.23.3",
@@ -58,7 +59,7 @@
         "eslint-plugin-compat": "^4.2.0",
         "eslint-plugin-prettier": "^5.0.1",
         "eslint-plugin-react": "^7.33.2",
-        "husky": "^4.3.8",
+        "husky": "^8.0.0",
         "inquirer": "^8.2.6",
         "jest": "^29.7.0",
         "jest-environment-jsdom": "^29.7.0",
@@ -77,13 +78,6 @@
     "config": {
         "commitizen": {
             "path": "@commitlint/cz-commitlint"
-        }
-    },
-    "husky": {
-        "hooks": {
-            "prepare-commit-msg": "exec < /dev/tty && node_modules/.bin/cz --hook || true",
-            "commit-msg": "npm run commitlint -- --edit $1",
-            "pre-commit": "lint-staged"
         }
     },
     "lint-staged": {
