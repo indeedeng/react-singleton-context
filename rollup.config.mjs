@@ -5,7 +5,7 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
 const extensions = ['.ts', '.tsx'];
 
-module.exports = {
+export default {
     input: './src/index.ts',
     output: [
         {
