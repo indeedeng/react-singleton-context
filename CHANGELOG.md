@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.0.4 (2023-12-04)
+
+
+### Continuous Integration
+
+* ensure husky is skipped during GitHub Action runs ([0deb85a](https://github.com/indeedeng/react-singleton-context/commit/0deb85adf19be1d6d60b17ab12de2a2c044986de))
+
 ### 1.0.3 (2023-11-09)
 
 

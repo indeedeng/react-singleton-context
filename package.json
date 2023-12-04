@@ -1,6 +1,6 @@
 {
     "name": "react-singleton-context",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "A small library designed to register and return singletonized React contexts",
     "license": "MIT",
     "repository": {
