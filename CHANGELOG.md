@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.0.5 (2024-02-11)
+
+
+### Miscellaneous Chores
+
+* Bump minor and patch dependencies ([d3ed705](https://github.com/indeedeng/react-singleton-context/commit/d3ed705d2c1828009472bf1f68ae4c7c67bedc52))
+
 ### 1.0.4 (2023-12-04)
 
 
