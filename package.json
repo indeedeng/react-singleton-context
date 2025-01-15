@@ -32,7 +32,7 @@
         "quality": "npm run lint && npm run test",
         "commit": "git-cz",
         "commitlint": "commitlint --color --verbose",
-        "prepare": "husky install"
+        "prepare": "husky"
     },
     "devDependencies": {
         "@babel/core": "^7.26.0",
@@ -59,7 +59,7 @@
         "eslint-plugin-compat": "^4.2.0",
         "eslint-plugin-prettier": "^5.2.1",
         "eslint-plugin-react": "^7.37.4",
-        "husky": "^8.0.3",
+        "husky": "^9.1.7",
         "inquirer": "^8.2.6",
         "jest": "^29.7.0",
         "jest-environment-jsdom": "^29.7.0",
