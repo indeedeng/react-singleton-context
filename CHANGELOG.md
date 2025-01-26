@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.1.0 (2025-01-26)
+
+
+### Features
+
+* Update React to v19 and add React v19 as an acceptable peerDependency ([1f5a9b2](https://github.com/indeedeng/react-singleton-context/commit/1f5a9b2c40f6da3ebdbdcf63f3164da2efddacb5))
+
 ### 1.0.5 (2024-02-11)
 
 
