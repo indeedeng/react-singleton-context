@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.1.1 (2025-04-20)
+
+
+### Bug Fixes
+
+* **package-lock:** revert bad change to package-lock that introduces paths to internal repository ([f6f5fb6](https://github.com/indeedeng/react-singleton-context/commit/f6f5fb6787551d4e954b7a1e92245a5fb23050dd))
+
 ## 1.1.0 (2025-01-26)
 
 
