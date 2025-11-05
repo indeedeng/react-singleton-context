@@ -7,7 +7,7 @@ on:
       
 permissions:
   id-token: write  # Required for OIDC / NPM Trusted Publishing (https://repos.openssf.org/trusted-publishers-for-all-package-repositories)
-  contents: read
+  contents: write
 
 jobs:
   quality-bump-and-publish:
