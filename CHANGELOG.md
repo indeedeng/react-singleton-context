@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.1.2 (2025-11-05)
+
+
+### Continuous Integration
+
+* Fix GitHub Action permission ([cf401e3](https://github.com/indeedeng/react-singleton-context/commit/cf401e3aee85834ebe92e1ee6a8e1fb42351a7eb))
+
 ### 1.1.1 (2025-04-20)
 
 
