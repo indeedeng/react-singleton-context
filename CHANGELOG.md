@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.1.4 (2025-11-05)
+
+
+### Continuous Integration
+
+* Ensure GitHub Action install latest npm for trusted publishing support ([cb697b6](https://github.com/indeedeng/react-singleton-context/commit/cb697b6c2d01c0a0b0fac608345324cbc8b3922b))
+
 ### 1.1.3 (2025-11-05)
 
 
