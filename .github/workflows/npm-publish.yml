@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - "main"
+      
+permissions:
+  id-token: write  # Required for OIDC / NPM Trusted Publishing (https://repos.openssf.org/trusted-publishers-for-all-package-repositories)
+  contents: read
 
 jobs:
   quality-bump-and-publish:
@@ -37,5 +41,3 @@ jobs:
         run: npm run package
       - name: Publish to npm
         run: npm publish
-        env:
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
