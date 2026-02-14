@@ -1,4 +1,4 @@
-name: Quality # Don't change this value without updating release.yml; name must match to chain workflows
+name: Quality
 
 on:
     pull_request: # Run this workflow for all pull request changes
@@ -8,7 +8,6 @@ on:
             - synchronize
     repository_dispatch: # Run this workflow when base branch updates
         types: [base_branch_updated]
-    workflow_dispatch: # Allows manual triggering of this workflow
 
 jobs:
     quality:
@@ -25,7 +24,7 @@ jobs:
             - name: Install npm dependencies
               run: npm ci
               env:
-                  HUSKY: 0
+                  HUSKY: 0 # Disable husky within CI/CD
             - name: Run quality checks
               run: npm run quality
             - name: Build project
