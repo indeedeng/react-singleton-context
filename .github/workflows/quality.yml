@@ -1,0 +1,30 @@
+name: Quality # Don't change this value without updating release.yml; name must match to chain workflows
+
+on:
+    pull_request: # Run this workflow for all pull request changes
+        types:
+            - opened
+            - reopened
+            - edited
+    workflow_dispatch: # Allows manual triggering of this workflow
+
+jobs:
+    quality:
+        runs-on: ubuntu-latest
+        if: ${{ !contains(github.event.head_commit.message, '[ci-skip]') }}
+        steps:
+            - uses: actions/checkout@v6
+            - uses: actions/setup-node@v6
+              with:
+                  node-version: 24
+                  registry-url: 'https://registry.npmjs.org'
+            - name: Update npm
+              run: npm install -g npm@latest
+            - name: Install npm dependencies
+              run: npm ci
+              env:
+                  HUSKY: 0
+            - name: Run quality checks
+              run: npm run quality
+            - name: Build project
+              run: npm run build
