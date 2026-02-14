@@ -21,7 +21,7 @@
         "prebuild": "npm run clean",
         "build:ts": "rollup -c ./rollup.config.mjs",
         "build:types": "tsc --project ./tsconfig.build.json --emitDeclarationOnly",
-        "build": "npm run build:ts && npm run build:types",
+        "build": "npm run build:ts && npm run build:type",
         "package": "npm pack",
         "clean": "rm -rf dist stats coverage",
         "lint": "eslint ./src",
