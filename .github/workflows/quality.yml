@@ -5,7 +5,9 @@ on:
         types:
             - opened
             - reopened
-            - edited
+            - synchronize
+    repository_dispatch: # Run this workflow when base branch updates
+        types: [base_branch_updated]
     workflow_dispatch: # Allows manual triggering of this workflow
 
 jobs:
