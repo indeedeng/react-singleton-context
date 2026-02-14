@@ -1,18 +1,19 @@
-name: Publish to NPM
+name: Release
 
 on:
     push:
         branches:
-            - 'main'
+            - main
 
 permissions:
     id-token: write # Required for OIDC / NPM Trusted Publishing (https://repos.openssf.org/trusted-publishers-for-all-package-repositories)
+    issues: write
     contents: write
+    pull-requests: write
 
 jobs:
-    quality-bump-and-publish:
+    release:
         runs-on: ubuntu-latest
-        if: ${{ !contains(github.event.head_commit.message, '[ci-skip]') }}
         steps:
             - uses: actions/checkout@v6
             - uses: actions/setup-node@v6
@@ -21,28 +22,23 @@ jobs:
                   registry-url: 'https://registry.npmjs.org'
             - name: Update npm
               run: npm install -g npm@latest # NPM Trusted Publishing requires npm 11.5.1 or later
+            - name: Install dependencies
+              run: npm ci
+              env:
+                  HUSKY: 0 # Disable husky within CI/CD
             - name: Configure git
               run: |
                   git config user.name "GitHub Actions Bot"
                   git config user.email "github-actions-bot@users.noreply.github.com"
-            - name: Install npm dependencies
-              run: npm ci
-              env:
-                  HUSKY: 0
-            - name: Run quality checks
-              run: npm run quality
-            - name: Build project
-              run: npm run build
-            - name: Run standard-version to bump version
-              run: npm run release
-            - name: Push version bump to main
-              uses: ad-m/github-push-action@master
+            - uses: googleapis/release-please-action@v4
               with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  branch: main
-                  tags: true
-                  force: true
+                  release-type: node
+            - name: Build project
+              if: ${{ steps.release.outputs.release_created }}
+              run: npm run build
             - name: Bundle tarball
+              if: ${{ steps.release.outputs.release_created }}
               run: npm run package
             - name: Publish to npm
+              if: ${{ steps.release.outputs.release_created }}
               run: npm publish
