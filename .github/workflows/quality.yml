@@ -1,0 +1,31 @@
+name: Quality
+
+on:
+    pull_request: # Run this workflow for all pull request changes
+        types:
+            - opened
+            - reopened
+            - synchronize
+    repository_dispatch: # Run this workflow when base branch updates
+        types: [base_branch_updated]
+
+jobs:
+    quality:
+        runs-on: ubuntu-latest
+        if: ${{ !contains(github.event.head_commit.message, '[ci-skip]') }}
+        steps:
+            - uses: actions/checkout@v6
+            - uses: actions/setup-node@v6
+              with:
+                  node-version: 24
+                  registry-url: 'https://registry.npmjs.org'
+            - name: Update npm
+              run: npm install -g npm@latest
+            - name: Install dependencies
+              run: npm ci
+              env:
+                  HUSKY: 0 # Disable husky within CI/CD
+            - name: Run quality checks
+              run: npm run quality
+            - name: Build project
+              run: npm run build
