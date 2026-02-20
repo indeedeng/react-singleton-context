@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     releaseCommitMessageFormat: 'chore(release): {{currentTag}} [ci-skip]',
     types: [
         {

@@ -26,7 +26,6 @@
         "clean": "rm -rf dist stats coverage",
         "lint": "eslint ./src",
         "lint:fix": "eslint ./src --fix",
-        "release": "standard-version --no-verify",
         "test": "jest",
         "test:watch": "jest --watch",
         "quality": "npm run lint && npm run test",
@@ -71,7 +70,6 @@
         "react": "^19.2.4",
         "rollup": "^4.57.1",
         "rollup-plugin-peer-deps-external": "^2.2.4",
-        "standard-version": "^9.5.0",
         "typescript": "^5.9.3"
     },
     "peerDependencies": {
