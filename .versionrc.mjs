@@ -2,9 +2,9 @@ export default {
     releaseCommitMessageFormat: 'chore(release): {{currentTag}} [ci-skip]',
     types: [
         {
-            type: 'feature',
+            type: 'deps',
             hidden: false,
-            section: 'Features'
+            section: 'Dependencies'
         },
         {
             type: 'feat',
