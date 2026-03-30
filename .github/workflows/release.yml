@@ -26,13 +26,11 @@ jobs:
               run: npm ci
               env:
                   HUSKY: 0 # Disable husky within CI/CD
-            - name: Configure git
-              run: |
-                  git config user.name "GitHub Actions Bot"
-                  git config user.email "github-actions-bot@users.noreply.github.com"
             - uses: googleapis/release-please-action@v4
               with:
                   release-type: node
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  manifest-file: .release-please-manifest.json
             - name: Build project
               if: ${{ steps.release.outputs.release_created }}
               run: npm run build
