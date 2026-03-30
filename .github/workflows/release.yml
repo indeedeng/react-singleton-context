@@ -27,6 +27,7 @@ jobs:
               env:
                   HUSKY: 0 # Disable husky within CI/CD
             - uses: googleapis/release-please-action@v4
+              id: release
               with:
                   release-type: node
                   token: ${{ secrets.GITHUB_TOKEN }}
