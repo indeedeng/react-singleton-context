@@ -1,65 +1,16 @@
 export default {
     releaseCommitMessageFormat: 'chore(release): {{currentTag}} [ci-skip]',
     types: [
-        {
-            type: 'deps',
-            hidden: false,
-            section: 'Dependencies'
-        },
-        {
-            type: 'feat',
-            hidden: false,
-            section: 'Features'
-        },
-        {
-            type: 'fix',
-            hidden: false,
-            section: 'Bug Fixes'
-        },
-        {
-            type: 'build',
-            hidden: false,
-            section: 'Build System'
-        },
-        {
-            type: 'chore',
-            hidden: false,
-            section: 'Miscellaneous Chores'
-        },
-        {
-            type: 'ci',
-            hidden: false,
-            section: 'Continuous Integration'
-        },
-        {
-            type: 'docs',
-            hidden: false,
-            section: 'Documentation'
-        },
-        {
-            type: 'style',
-            hidden: false,
-            section: 'Styles'
-        },
-        {
-            type: 'refactor',
-            hidden: false,
-            section: 'Code Refactoring'
-        },
-        {
-            type: 'perf',
-            hidden: false,
-            section: 'Performance Improvements'
-        },
-        {
-            type: 'test',
-            hidden: false,
-            section: 'Tests'
-        },
-        {
-            type: 'revert',
-            hidden: false,
-            section: 'Reverts'
-        }
+        { type: 'feat', section: 'Features' },
+        { type: 'fix', section: 'Bug Fixes' },
+        { type: 'perf', section: 'Performance Improvements' },
+        { type: 'revert', section: 'Reverts' },
+        { type: 'chore', section: 'Miscellaneous Chores' },
+        { type: 'docs', section: 'Documentation' },
+        { type: 'style', section: 'Styles' },
+        { type: 'refactor', section: 'Code Refactoring' },
+        { type: 'test', section: 'Tests', hidden: true },
+        { type: 'build', section: 'Build System', hidden: true },
+        { type: 'ci', section: 'Continuous Integration', hidden: true }
     ]
 };
