@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.7](https://github.com/indeedeng/react-singleton-context/compare/v1.1.6...v1.1.7) (2026-03-30)
+
+
+### Bug Fixes
+
+* Clean up release-please configs after some experimentation ([7f75bd4](https://github.com/indeedeng/react-singleton-context/commit/7f75bd4c99b26ca2a03d4b2cf51ec531d23269af))
+
 ### 1.1.6 (2026-02-15)
 
 
