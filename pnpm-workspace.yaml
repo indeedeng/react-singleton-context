@@ -1,0 +1,6 @@
+allowBuilds:
+    unrs-resolver: false
+blockExoticSubdeps: true
+minimumReleaseAge: 10080 # 7 days (Unit is minutes)
+trustPolicy: no-downgrade
+trustPolicyIgnoreAfter: 43200 # 30 days (Unit is minutes)

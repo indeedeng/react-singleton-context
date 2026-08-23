@@ -19,13 +19,14 @@ jobs:
               with:
                   node-version: 24
                   registry-url: 'https://registry.npmjs.org'
-            - name: Update npm
-              run: npm install -g npm@latest
+            - uses: pnpm/action-setup@v6
+              with:
+                  version: 11
             - name: Install dependencies
-              run: npm ci
+              run: pnpm install --frozen-lockfile
               env:
                   HUSKY: 0 # Disable husky within CI/CD
             - name: Run quality checks
-              run: npm run quality
+              run: pnpm quality
             - name: Build project
-              run: npm run build
+              run: pnpm build
