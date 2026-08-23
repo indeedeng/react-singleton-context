@@ -20,10 +20,11 @@ jobs:
               with:
                   node-version: 24
                   registry-url: 'https://registry.npmjs.org'
-            - name: Update npm
-              run: npm install -g npm@latest # NPM Trusted Publishing requires npm 11.5.1 or later
+            - uses: pnpm/action-setup@v6
+              with:
+                  version: 11
             - name: Install dependencies
-              run: npm ci
+              run: pnpm install --frozen-lockfile
               env:
                   HUSKY: 0 # Disable husky within CI/CD
             - uses: googleapis/release-please-action@v4
@@ -34,10 +35,10 @@ jobs:
                   manifest-file: .release-please-manifest.json
             - name: Build project
               if: ${{ steps.release.outputs.release_created }}
-              run: npm run build
+              run: pnpm build
             - name: Bundle tarball
               if: ${{ steps.release.outputs.release_created }}
-              run: npm run package
+              run: pnpm package
             - name: Publish to npm
               if: ${{ steps.release.outputs.release_created }}
-              run: npm publish
+              run: pnpm publish --provenance

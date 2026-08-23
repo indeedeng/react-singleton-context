@@ -35,10 +35,10 @@ First, add the package as a dependency, like so:
 npm install react-singleton-context
 ```
 
-or, if using Yarn:
+or, if using pnpm:
 
 ```
-yarn add react-singleton-context
+pnpm add react-singleton-context
 ```
 
 Once that's done, go ahead and add it as an eager singleton to your Webpack config's Module Federation plugin declaration:
@@ -71,10 +71,10 @@ Like you did with the host application, it's time to add the package to the libr
 npm install react-singleton-context --save-dev
 ```
 
-or, if using Yarn:
+or, if using pnpm:
 
 ```
-yarn add react-singleton-context --dev
+pnpm add react-singleton-context -d
 ```
 
 Then, add `react-singleton-context` as a `peerDependency` for this library, too. Doing so will necessitate a major version bump for your library, as that's a breaking change.

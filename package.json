@@ -18,20 +18,20 @@
     "es": "dist/esm/index.mjs",
     "types": "dist/types/index.d.ts",
     "scripts": {
-        "prebuild": "npm run clean",
+        "prebuild": "pnpm clean",
         "build:ts": "rollup -c ./rollup.config.mjs",
         "build:types": "tsc --project ./tsconfig.build.json --emitDeclarationOnly",
-        "build": "npm run build:ts && npm run build:types",
-        "package": "npm pack",
+        "build": "pnpm build:ts && pnpm build:types",
+        "package": "pnpm pack",
         "clean": "rm -rf dist stats coverage",
         "lint": "eslint ./src",
         "lint:fix": "eslint ./src --fix",
         "test": "jest",
         "test:watch": "jest --watch",
-        "quality": "npm run lint && npm run test",
+        "quality": "pnpm lint && pnpm test",
         "commit": "git-cz",
-        "commitlint": "commitlint --color --verbose",
-        "prepare": "husky"
+        "commitlint": "commitlint --color --verbose --last",
+        "prepare": "node -e \"if (process.env.NODE_ENV !== 'production'){ process.exit(1)} \" || husky"
     },
     "devDependencies": {
         "@babel/core": "^7.29.0",
@@ -82,7 +82,7 @@
     },
     "lint-staged": {
         "src/**/*.{js,jsx,ts,tsx}": [
-            "npm run lint:fix"
+            "pnpm lint:fix"
         ]
     }
 }

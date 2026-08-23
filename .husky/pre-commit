@@ -1,1 +1,1 @@
-npm run quality && npx lint-staged
+pnpm quality && pnpx lint-staged
